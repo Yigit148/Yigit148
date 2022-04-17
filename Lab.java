@@ -1,12 +1,11 @@
 import java.util.Random;
-import java.util.Scanner;
 
 public class Lab {
     public static void main(String[] args){
         Random random = new Random();
 
 
-        System.out.println("\n" + "Part 1" + "\n" + "*******************************");
+        System.out.println("\n" + "\n" + "Part 1" + "\n" + "*******************************");
 
         int[] int_array = new int[20];
 
@@ -14,16 +13,17 @@ public class Lab {
             int_array[i] = (random.nextInt(100));
         }
 
+        System.out.println("Array :");
         printArray(int_array);
 
-        System.out.println("\n" + "Part 2" + "\n" + "*******************************");
+        System.out.println("\n" + "\n" + "Part 2" + "\n" + "*******************************");
 
         System.out.println("Original Array :");
         printArray(int_array);
         System.out.println("\nReversed Array :");
         printArray(reverse(int_array));
 
-        System.out.println("\n" + "Part 3" + "\n" + "*******************************");
+        System.out.println("\n" + "\n" + "Part 3" + "\n" + "*******************************");
 
         int[] array = { 53, 34, 12, 15, 76, 99, 1, 3, 64, 69, 7, 27, 44, 9, 73, 2, 87, 50, 6, 6};
 
@@ -32,14 +32,12 @@ public class Lab {
         System.out.println("\nMerged Array :");
         printDoubleArray(merge4(array));
 
-        System.out.println("\n" + "Part 4" + "\n" + "*******************************");
+        System.out.println("\n" + "\n" + "Part 4" + "\n" + "*******************************");
 
         System.out.println("Original Array :");
         printArray(array);
         System.out.println("\nString Array :");
         printStringArray(merge2(array));
-
-
     }
 
     static void printArray(int[] array){
@@ -71,7 +69,6 @@ public class Lab {
             new_array[count] = x;
             count++;
         }
-
         return new_array;
     }
 
@@ -87,7 +84,6 @@ public class Lab {
         String[] new_array = new String[array.length/2];
         int count = 0;
 
-
         while (count < array.length/2){
             String  x;
             String temp = "";
@@ -97,9 +93,7 @@ public class Lab {
             }
             new_array[count] = temp;
             count++;
-
         }
-
         return new_array;
     }
 
