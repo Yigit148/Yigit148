@@ -25,9 +25,9 @@ public class LAB09 {
 
     }
 
-    public static ArrayList readBooks(String filename) throws FileNotFoundException {
+    public static ArrayList<Book> readBooks(String filename) throws FileNotFoundException {
         Scanner fileScan = new Scanner(new File(filename));
-        ArrayList<Object> lst = new ArrayList<>();
+        ArrayList<Book> lst = new ArrayList<>();
 
         while (fileScan.hasNext()) {
             String x = fileScan.nextLine();
@@ -40,37 +40,34 @@ public class LAB09 {
         return lst;
     }
 
-    public static void printBooks (ArrayList Arr) {
+    public static void printBooks (ArrayList<Book> Arr) {
         for (Object x : Arr) {
             System.out.println(x.toString());
         }
     }
 
-    public static void findBooks(ArrayList Arr, String author_name) {
-        int count = 0;
-        for (Object x : Arr ){
-            String str = x + "";
-            if (str.contains(author_name)){
-                System.out.println(Arr.get(count));
+    public static void findBooks(ArrayList<Book> Arr, String author_name) {
+        for (Book x : Arr){
+            if (x.author.contains(author_name)){
+                System.out.println(x);
             }
-            count++;
         }
     }
 
     public static int sumDigits(int num){
-        if (num == 0)
-            return 0;
+        if (num == 0){
+            return 0;}
         return (num % 10 + sumDigits(num / 10));
     }
 
 
 }
 
-class Book {
-    private String name;
-    private String author;
-    private int year;
-    private int pages;
+class Book extends LAB09{
+    public String name;
+    public String author;
+    public int year;
+    public int pages;
 
     public Book(String name, String author, int year, int pages) {
         this.name = name;
@@ -80,25 +77,33 @@ class Book {
     }
 
     public void setAuthor(String author) {
-        this.author = author;}
+        this.author = author;
+    }
 
     public void setPage(int pages) {
-        this.pages = pages;}
+        this.pages = pages;
+    }
 
     public String getName() {
-        return name;}
+        return name;
+    }
 
     public String getAuthor() {
-        return author;}
+        return author;
+    }
 
     public int getYear() {
-        return year;}
+        return year;
+    }
 
     public int getPages() {
-        return pages;}
+        return pages;
+    }
 
     public String toString() {
         return name + ", " + author + ", " + year + ", " + pages + " p.";
     }
 
+
 }
+
